@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كلمة اليوم | خمّن الكلمة العربية — لعبة وردل بالعربية | محظوظ</title>
+<meta name="description" content="كلمة اليوم: لعبة تخمين الكلمة العربية (وردل بالعربي) — خمّن الكلمة المكوّنة من 5 حروف في 6 محاولات. مجانية، يومية، تُلعب في المتصفح.">
+<meta name="keywords" content="كلمة اليوم, وردل بالعربي, لعبة تخمين الكلمات, خمن الكلمة, ألعاب كلمات عربية">
+<link rel="canonical" href="https://ma7zooz.com/word.html">
+<meta property="og:title" content="كلمة اليوم — وردل بالعربية">
+<meta property="og:description" content="خمّن كلمة اليوم المكوّنة من 5 حروف في 6 محاولات.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_153610_28b68024-b299-43db-af42-80c2f4ae4ea2.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!-- ANALYTICS SLOT -->
+<style>
+  .board{display:grid;grid-template-rows:repeat(6,1fr);gap:8px;justify-content:center;margin:6px 0 18px}
+  .brow{display:flex;flex-direction:row;gap:8px;justify-content:center}
+  .tile{width:58px;height:58px;border:2px solid var(--line2);border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-family:"Baloo Bhaijaan 2","Tajawal",sans-serif;font-weight:800;font-size:30px;color:#fff;background:transparent;transition:transform .12s}
+  .tile.filled{border-color:#6b5bc0;transform:scale(1.04)}
+  .tile.g{background:var(--green);border-color:var(--green);color:#08351f}
+  .tile.y{background:var(--y);border-color:var(--y);color:#3b2c00}
+  .tile.x{background:#2a1c5e;border-color:#2a1c5e;color:#b9aee6}
+  .kb{display:flex;flex-direction:column;gap:8px;max-width:560px;margin-inline:auto}
+  .krow{display:flex;gap:6px;justify-content:center;flex-wrap:nowrap}
+  .key{flex:1 1 0;min-width:0;height:52px;border:none;border-radius:9px;background:var(--card2);color:#fff;font-family:"Tajawal",sans-serif;font-weight:700;font-size:19px;cursor:pointer;padding:0}
+  .key:hover{background:#3a2597}
+  .key.wide{flex:1.6 1 0;font-size:14px;font-weight:800}
+  .key.g{background:var(--green);color:#08351f}
+  .key.y{background:var(--y);color:#3b2c00}
+  .key.x{background:#241257;color:#7a6db0}
+  .msg{text-align:center;min-height:24px;color:var(--y);font-weight:700;margin-bottom:6px}
+  @media(max-width:520px){.tile{width:48px;height:48px;font-size:25px}.key{height:46px;font-size:17px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="index.html" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="index.html">الرئيسية</a><a href="game2048.html">2048</a><a href="memory.html">الذاكرة</a></nav>
+    <span class="grow"></span>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="index.html">الرئيسية</a> ← ألعاب كلمات ← كلمة اليوم</div>
+  <div class="gtitle"><h1>كلمة اليوم 🔤</h1><p>خمّن الكلمة المكوّنة من 5 حروف في 6 محاولات</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="msg" id="msg"></div>
+  <div class="board" id="board"></div>
+  <div class="kb" id="kb"></div>
+
+  <div style="text-align:center;margin-top:16px">
+    <button class="btn ghost" id="howBtn">كيف تلعب؟</button>
+  </div>
+
+  <div class="card-surface" id="how" hidden style="margin-top:16px">
+    <h3 class="play-font" style="margin:0 0 8px;color:#fff">طريقة اللعب</h3>
+    <p style="color:var(--muted);margin:0 0 8px">اكتب كلمة من 5 حروف واضغط «تحقّق». بعد كل محاولة تتغيّر ألوان الحروف:</p>
+    <p style="margin:6px 0"><span class="tile g" style="width:34px;height:34px;font-size:18px;display:inline-flex;vertical-align:middle">ح</span> الحرف صحيح وفي مكانه الصحيح.</p>
+    <p style="margin:6px 0"><span class="tile y" style="width:34px;height:34px;font-size:18px;display:inline-flex;vertical-align:middle">ر</span> الحرف موجود لكن في مكان آخر.</p>
+    <p style="margin:6px 0"><span class="tile x" style="width:34px;height:34px;font-size:18px;display:inline-flex;vertical-align:middle">ز</span> الحرف غير موجود في الكلمة.</p>
+  </div>
+</main>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com) — العب كلمة جديدة كل يوم.</div></footer>
+
+<div class="toast-g" id="toast"></div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var ANSWERS=["مكتبة","حديقة","سيارة","مدينة","قصيدة","جميلة","سعادة","رسالة","مفتاح","عصفور","فراشة","سحابة","بستان","ملابس","مشروب","طبيعة","صديقة","مدرسة","كتابة","رياضة","نافذة","مصباح","عنوان","حكاية","مطاعم","نجوم"];
+  // keep only genuine 5-letter entries (defensive)
+  ANSWERS=ANSWERS.filter(function(w){return Array.from(w).length===5;});
+  var ROWS=6, COLS=5;
+  var KEYS=[["ا","ب","ت","ث","ج","ح","خ","د","ذ","ر"],
+            ["ز","س","ش","ص","ض","ط","ظ","ع","غ","ف"],
+            ["تحقّق","ق","ك","ل","م","ن","ه","و","ي","ة","⌫"]];
+  function today(){ var d=new Date(); return Math.floor((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))/86400000); }
+  var answer=ANSWERS[ today() % ANSWERS.length ];
+  var ans=Array.from(answer);
+  var row=0, col=0, cur="", over=false, grid=[];
+  var board=document.getElementById('board'), kb=document.getElementById('kb'), msgEl=document.getElementById('msg');
+
+  for(var r=0;r<ROWS;r++){ var br=document.createElement('div'); br.className='brow'; var line=[];
+    for(var c=0;c<COLS;c++){ var t=document.createElement('div'); t.className='tile'; br.appendChild(t); line.push(t);} board.appendChild(br); grid.push(line);
+  }
+  var keyEls={};
+  KEYS.forEach(function(kr){ var kd=document.createElement('div'); kd.className='krow';
+    kr.forEach(function(k){ var b=document.createElement('button'); b.className='key'+((k==='تحقّق'||k==='⌫')?' wide':''); b.textContent=k;
+      b.addEventListener('click',function(){ press(k); }); if(k.length===1) keyEls[k]=b; kd.appendChild(b); });
+    kb.appendChild(kd);
+  });
+
+  function toast(m){ var t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){t.classList.remove('show');},1800); }
+  function msg(m){ msgEl.textContent=m||""; }
+
+  function press(k){
+    if(over) return;
+    if(k==='⌫'){ if(col>0){ col--; cur=cur.slice(0,-1); grid[row][col].textContent=''; grid[row][col].classList.remove('filled'); } msg(''); return; }
+    if(k==='تحقّق'){ submit(); return; }
+    if(col<COLS){ grid[row][col].textContent=k; grid[row][col].classList.add('filled'); cur+=k; col++; }
+  }
+
+  function submit(){
+    if(col<COLS){ msg('الكلمة يجب أن تكون 5 حروف'); toast('أكمل 5 حروف'); return; }
+    var guess=Array.from(cur);
+    // two-pass scoring
+    var res=new Array(COLS).fill('x'); var counts={};
+    ans.forEach(function(ch){counts[ch]=(counts[ch]||0)+1;});
+    for(var i=0;i<COLS;i++){ if(guess[i]===ans[i]){res[i]='g'; counts[guess[i]]--;} }
+    for(var j=0;j<COLS;j++){ if(res[j]==='g')continue; if(counts[guess[j]]>0){res[j]='y'; counts[guess[j]]--;} }
+    for(var m=0;m<COLS;m++){ (function(idx){ setTimeout(function(){ var tl=grid[row][idx]; tl.classList.add(res[idx]); tl.classList.remove('filled');
+        var ke=keyEls[guess[idx]]; if(ke){ if(res[idx]==='g'){ke.classList.remove('y','x');ke.classList.add('g');} else if(res[idx]==='y'){ if(!ke.classList.contains('g')){ke.classList.remove('x');ke.classList.add('y');} } else { if(!ke.classList.contains('g')&&!ke.classList.contains('y'))ke.classList.add('x'); } }
+      }, idx*220); })(m); }
+    var win=res.every(function(x){return x==='g';});
+    setTimeout(function(){
+      if(win){ over=true; msg('أحسنت! 🎉'); toast('فزت في '+(row+1)+' محاولات'); }
+      else { row++; col=0; cur=""; if(row>=ROWS){ over=true; msg('انتهت المحاولات — الكلمة: '+answer); toast('حظ أوفر غداً'); } }
+    }, COLS*220+60);
+  }
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter') press('تحقّق');
+    else if(e.key==='Backspace') press('⌫');
+    else { var ar={'q':'ض'}; /* physical arabic not mapped; rely on on-screen */ }
+  });
+  document.getElementById('howBtn').addEventListener('click',function(){ var h=document.getElementById('how'); h.hidden=!h.hidden; });
+})();
+</script>
+</body>
+</html>
