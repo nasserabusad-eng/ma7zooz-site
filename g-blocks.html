@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>أحجار محظوظ | لعبة ترتيب المكعبات بالعربية | محظوظ</title>
+<meta name="description" content="أحجار محظوظ: لعبة ترتيب المكعبات الكلاسيكية بالعربية — رتّب القطع المتساقطة وامسح الصفوف واجمع أعلى نقاط. تُلعب مباشرة في المتصفح بدون تحميل.">
+<meta name="keywords" content="أحجار محظوظ, لعبة مكعبات, ترتيب القطع, ألعاب ذكاء, ألعاب مجانية, العب بدون تحميل">
+<link rel="canonical" href="https://ma7zooz.com/g-blocks.html">
+<meta property="og:title" content="أحجار محظوظ — محظوظ">
+<meta property="og:description" content="رتّب المكعبات وامسح الصفوف — كم نقطة تجمع؟">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="games/blockrain/blockrain.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"أحجار محظوظ","url":"https://ma7zooz.com/g-blocks.html","inLanguage":"ar","genre":"ذكاء","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:14px}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 18px;text-align:center;min-width:90px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:22px;color:#fff}
+  .boardwrap{width:min(90vw,340px);margin-inline:auto;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line2);box-shadow:0 14px 40px rgba(0,0,0,.4);background:#0e0824}
+  #board{width:100%;height:min(150vw,560px)}
+  #board canvas{display:block;width:100%!important;height:100%!important}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+  .toast{position:fixed;inset-inline:0;bottom:26px;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
+  .toast.show{opacity:1}
+  .toast span{background:#0e0824;color:#fff;border:1px solid var(--line2);border-radius:999px;padding:10px 20px;font-size:14px}
+  .hint{color:var(--muted);text-align:center;font-size:13px;margin-top:16px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="index.html" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="index.html">الرئيسية</a><a href="word.html">كلمة اليوم</a><a href="game2048.html">2048</a><a href="memory.html">الذاكرة</a></nav>
+    <span class="grow"></span>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="index.html">الرئيسية</a> ← ألعاب ذكاء ← أحجار محظوظ</div>
+  <div class="gtitle"><h1>🧱 أحجار محظوظ</h1><p>رتّب المكعبات المتساقطة وامسح الصفوف — كم نقطة تجمع؟</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l">أفضل نتيجة</div><div class="v" id="best">0</div></div>
+  </div>
+
+  <div class="boardwrap"><div id="board"></div></div>
+
+  <div class="btnrow">
+    <button class="btn" id="restartBtn">🔄 لعبة جديدة</button>
+    <a class="btn ghost" href="index.html">🎲 ألعاب أخرى</a>
+  </div>
+
+  <p class="hint">على الكمبيوتر: الأسهم ⬅️ ➡️ للتحريك، ⬆️ للتدوير، ⬇️ للإسقاط · على الجوال: انقر واسحب</p>
+</main>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com) — «أحجار محظوظ» مبنية على Blockrain.js (رخصة MIT)</div></footer>
+
+<div class="toast" id="toast"><span id="toastText"></span></div>
+
+<script src="games/blockrain/jquery.min.js"></script>
+<script src="games/blockrain/blockrain.jquery.min.js"></script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  var best=0; try{ best=parseInt(localStorage.getItem('m7_blocks_best')||'0',10)||0; }catch(e){}
+  document.getElementById('best').textContent=best;
+
+  var $board=$('#board').blockrain({
+    theme:'candy',
+    autoplay:false,
+    speed:20,
+    difficulty:'normal',
+    showFieldOnStart:true,
+    playText:'العب أحجار محظوظ',
+    playButtonText:'ابدأ اللعب',
+    gameOverText:'انتهت اللعبة',
+    restartButtonText:'العب مجدداً',
+    scoreText:'النقاط',
+    onGameOver:function(score){
+      score=parseInt(score,10)||0;
+      if(score>best){ best=score; document.getElementById('best').textContent=best;
+        try{ localStorage.setItem('m7_blocks_best',best); }catch(e){}
+        flash('رقم قياسي جديد! 🏆 '+best); }
+    }
+  });
+
+  document.getElementById('restartBtn').addEventListener('click',function(){
+    try{ $board.blockrain('restart'); }catch(e){}
+  });
+
+  var toast=document.getElementById('toast'), toastText=document.getElementById('toastText'), toastT;
+  function flash(m){ toastText.textContent=m; toast.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(function(){ toast.classList.remove('show'); },1800); }
+})();
+</script>
+</body>
+</html>
