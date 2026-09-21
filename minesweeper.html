@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كانسة الألغام | لعبة الألغام الكلاسيكية بالعربية | محظوظ</title>
+<meta name="description" content="لعبة كانسة الألغام (Minesweeper) المجانية بالعربية: اكشف الخلايا الآمنة وتجنّب الألغام وضع الأعلام. تُلعب باللمس على الجوال وبالفأرة على الكمبيوتر بلا تحميل.">
+<meta name="keywords" content="كانسة الألغام, لعبة الألغام, minesweeper, ألعاب ذكاء, العب مجاناً, ألعاب كلاسيكية">
+<link rel="canonical" href="https://ma7zooz.com/minesweeper.html">
+<meta property="og:title" content="كانسة الألغام | محظوظ">
+<meta property="og:description" content="اكشف الخلايا الآمنة وتجنّب الألغام!">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260921_195805_4425888d-3d65-44d9-bbf3-67f33a51198d.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:78px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:20px;color:#fff}
+  .flagbtn{background:var(--card2);border:1px solid var(--line2);color:#fff;font-weight:800;font-family:"Tajawal",sans-serif;font-size:15px;padding:9px 16px;border-radius:12px;cursor:pointer}
+  .flagbtn.on{background:linear-gradient(135deg,var(--p1),var(--p2));border-color:transparent}
+  .mboard{display:grid;gap:3px;width:min(94vw,440px);margin:0 auto;background:var(--line2);border:3px solid var(--p1);border-radius:12px;padding:4px;touch-action:manipulation}
+  .mc{aspect-ratio:1;background:linear-gradient(135deg,#3a2a86,#4a37a0);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:"Baloo Bhaijaan 2",sans-serif;font-size:clamp(14px,4vw,20px);color:#fff;cursor:pointer;user-select:none}
+  .mc.rev{background:var(--card);cursor:default}
+  .mc.mine{background:linear-gradient(135deg,#e11d48,#fb7185)}
+  .mc.flag{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+  .n1{color:#60a5fa}.n2{color:#34d399}.n3{color:#fb7185}.n4{color:#c084fc}.n5{color:#fbbf24}.n6{color:#22d3ee}.n7{color:#f472b6}.n8{color:#e2e8f0}
+  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
+  .overlay{position:fixed;inset:0;background:rgba(20,11,46,.88);display:none;align-items:center;justify-content:center;z-index:9999}
+  .overlay.show{display:flex}
+  .win{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:28px 34px;text-align:center;max-width:90vw}
+  .win h2{font-family:"Baloo Bhaijaan 2",sans-serif;color:#fff;font-size:28px;margin:0 0 8px}
+  .win p{color:var(--muted);margin:0 0 16px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="index.html" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="index.html">الرئيسية</a><a href="word.html">كلمة اليوم</a><a href="game2048.html">2048</a></nav>
+    <span class="grow"></span>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="index.html">الرئيسية</a> ← ألعاب ذكاء ← كانسة الألغام</div>
+  <div class="gtitle"><h1>كانسة الألغام 💣</h1><p>اكشف كل الخلايا الآمنة وتجنّب الألغام — ضع علماً على ما تظنّه لغماً</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l">الألغام</div><div class="v" id="mines">10</div></div>
+    <div class="score"><div class="l">الوقت</div><div class="v" id="time">0:00</div></div>
+    <button class="flagbtn" id="flagBtn">🚩 وضع علم: مُطفأ</button>
+    <button class="btn" id="newBtn">لعبة جديدة</button>
+  </div>
+
+  <div class="mboard" id="mboard"></div>
+  <p class="hint">اضغط لكشف الخلية · فعّل «وضع علم» ثم اضغط لوضع علم (على الكمبيوتر: زر الفأرة الأيمن)</p>
+</main>
+
+<div class="overlay" id="ov"><div class="win"><h2 id="wt">💥 انفجر اللغم!</h2><p id="wp"></p><button class="btn" id="ovBtn">لعبة جديدة</button></div></div>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var R=9,C=9,MINES=10;
+  var boardEl=document.getElementById('mboard'), minesEl=document.getElementById('mines'), timeEl=document.getElementById('time');
+  var flagBtn=document.getElementById('flagBtn');
+  var grid=[], cellsEl=[], flags=0, revealed=0, started=false, dead=false, flagMode=false, t0=0, timer=null;
+  boardEl.style.gridTemplateColumns='repeat('+C+',1fr)';
+
+  function idx(r,c){ return r*C+c; }
+  function inb(r,c){ return r>=0&&c>=0&&r<R&&c<C; }
+  function build(){
+    grid=[]; for(var i=0;i<R*C;i++)grid.push({mine:false,rev:false,flag:false,n:0});
+  }
+  function place(safe){
+    var placed=0;
+    while(placed<MINES){
+      var p=Math.floor(Math.random()*R*C);
+      if(grid[p].mine||p===safe)continue;
+      grid[p].mine=true; placed++;
+    }
+    for(var r=0;r<R;r++)for(var c=0;c<C;c++){
+      if(grid[idx(r,c)].mine)continue; var n=0;
+      for(var dr=-1;dr<=1;dr++)for(var dc=-1;dc<=1;dc++){ if((dr||dc)&&inb(r+dr,c+dc)&&grid[idx(r+dr,c+dc)].mine)n++; }
+      grid[idx(r,c)].n=n;
+    }
+  }
+  function render(){
+    boardEl.innerHTML=''; cellsEl=[];
+    for(var i=0;i<R*C;i++){
+      var d=document.createElement('div'); d.className='mc';
+      (function(p){
+        d.addEventListener('click',function(){ if(flagMode) toggleFlag(p); else reveal(p); });
+        d.addEventListener('contextmenu',function(e){ e.preventDefault(); toggleFlag(p); });
+      })(i);
+      boardEl.appendChild(d); cellsEl.push(d);
+    }
+  }
+  function startTimer(){ if(started)return; started=true; t0=Date.now(); timer=setInterval(function(){ var s=Math.floor((Date.now()-t0)/1000); timeEl.textContent=Math.floor(s/60)+':'+((s%60)<10?'0':'')+(s%60); },1000); }
+  function toggleFlag(p){
+    if(dead||grid[p].rev)return; startTimer();
+    grid[p].flag=!grid[p].flag; flags+=grid[p].flag?1:-1; minesEl.textContent=MINES-flags;
+    var el=cellsEl[p]; if(grid[p].flag){ el.classList.add('flag'); el.textContent='🚩'; } else { el.classList.remove('flag'); el.textContent=''; }
+  }
+  function reveal(p){
+    if(dead||grid[p].rev||grid[p].flag)return;
+    if(!started){ place(p); startTimer(); }
+    var cell=grid[p]; cell.rev=true; revealed++;
+    var el=cellsEl[p]; el.classList.add('rev');
+    if(cell.mine){ el.classList.add('mine'); el.textContent='💣'; return over(false); }
+    if(cell.n>0){ el.textContent=cell.n; el.classList.add('n'+cell.n); }
+    else{
+      var r=Math.floor(p/C), c=p%C;
+      for(var dr=-1;dr<=1;dr++)for(var dc=-1;dc<=1;dc++){ if((dr||dc)&&inb(r+dr,c+dc)) reveal(idx(r+dr,c+dc)); }
+    }
+    if(revealed===R*C-MINES) over(true);
+  }
+  function over(won){
+    dead=true; clearInterval(timer);
+    for(var i=0;i<R*C;i++){ if(grid[i].mine&&!grid[i].rev){ cellsEl[i].classList.add('rev'); cellsEl[i].textContent=grid[i].flag?'🚩':'💣'; } }
+    document.getElementById('wt').textContent=won?'🎉 فزت!':'💥 انفجر اللغم!';
+    document.getElementById('wp').textContent=won?('كشفت الحقل في '+timeEl.textContent):'حاول مرة أخرى — انتبه للأرقام!';
+    document.getElementById('ov').classList.add('show');
+  }
+  function reset(){
+    clearInterval(timer); flags=0; revealed=0; started=false; dead=false;
+    minesEl.textContent=MINES; timeEl.textContent='0:00'; document.getElementById('ov').classList.remove('show');
+    build(); render();
+  }
+  flagBtn.addEventListener('click',function(){ flagMode=!flagMode; flagBtn.classList.toggle('on',flagMode); flagBtn.textContent='🚩 وضع علم: '+(flagMode?'مُفعّل':'مُطفأ'); });
+  document.getElementById('newBtn').addEventListener('click',reset);
+  document.getElementById('ovBtn').addEventListener('click',reset);
+  reset();
+})();
+</script>
+</body>
+</html>
