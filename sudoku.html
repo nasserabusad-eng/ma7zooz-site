@@ -6,7 +6,7 @@
 <title>سودوكو | لعبة الأرقام الكلاسيكية بالعربية | محظوظ</title>
 <meta name="description" content="لعبة سودوكو مجانية بالعربية: املأ الشبكة بالأرقام من ١ إلى ٩ دون تكرار. ثلاثة مستويات صعوبة ومؤقّت، تُلعب على الجوال والكمبيوتر بلا تحميل.">
 <meta name="keywords" content="سودوكو, لعبة سودوكو, سودوكو بالعربية, ألعاب ذكاء, ألعاب أرقام, العب مجاناً">
-<link rel="canonical" href="https://ma7zooz.com/sudoku.html">
+<link rel="canonical" href="https://ma7zooz.com/sudoku">
 <meta property="og:title" content="سودوكو | محظوظ">
 <meta property="og:description" content="املأ الشبكة بالأرقام من ١ إلى ٩ — ثلاثة مستويات ومؤقّت.">
 <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260921_195805_930cee58-21b1-404f-874b-f63029135212.png">
@@ -16,6 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"سودوكو","url":"https://ma7zooz.com/sudoku","inLanguage":"ar","genre":"ذكاء","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
 <style>
   .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
   .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:78px}
@@ -47,14 +51,14 @@
 
 <header class="top">
   <div class="wrap mast">
-    <a href="index.html" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
-    <nav class="nav"><a href="index.html">الرئيسية</a><a href="word.html">كلمة اليوم</a><a href="game2048.html">2048</a></nav>
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
     <span class="grow"></span>
   </div>
 </header>
 
 <main class="gamewrap">
-  <div class="crumbs"><a href="index.html">الرئيسية</a> ← ألعاب ذكاء ← سودوكو</div>
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذكاء ← سودوكو</div>
   <div class="gtitle"><h1>سودوكو 🔢</h1><p>املأ الشبكة بالأرقام من ١ إلى ٩ دون تكرار في صف أو عمود أو مربع</p></div>
 
   <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
@@ -77,6 +81,14 @@
     <button data-n="1">1</button><button data-n="2">2</button><button data-n="3">3</button><button data-n="4">4</button><button data-n="5">5</button>
     <button data-n="6">6</button><button data-n="7">7</button><button data-n="8">8</button><button data-n="9">9</button><button class="era" data-n="0">مسح</button>
   </div>
+
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة سودوكو</h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">سودوكو لعبة الأرقام المنطقية الكلاسيكية: املأ الشبكة 9×9 بالأرقام من 1 إلى 9 دون تكرار في أي صف أو عمود أو مربع صغير. ثلاثة مستويات صعوبة ومؤقّت لتتحدى نفسك، مع لوحة أرقام على الشاشة للجوال. مجانية وبلا تحميل.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/word" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كلمة اليوم</a> · <a href="/snake" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">الأفعى</a> · <a href="/game2048" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">2048</a> · <a href="/minesweeper" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كانسة الألغام</a> · <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
 </main>
 
 <div class="overlay" id="ov"><div class="win"><h2>🎉 أحسنت!</h2><p id="wp"></p><button class="btn" id="ovBtn">لعبة جديدة</button></div></div>

@@ -6,7 +6,7 @@
 <title>لعبة 2048 بالعربية | ادمج الأرقام واربح | محظوظ</title>
 <meta name="description" content="لعبة 2048 المجانية بالعربية: حرّك المربعات وادمج الأرقام المتشابهة للوصول إلى 2048. لعبة ذكاء وإدمان تُلعب في المتصفح على الجوال والكمبيوتر.">
 <meta name="keywords" content="لعبة 2048, 2048 بالعربي, ألعاب ذكاء, ألعاب أرقام, العب 2048 مجاناً">
-<link rel="canonical" href="https://ma7zooz.com/game2048.html">
+<link rel="canonical" href="https://ma7zooz.com/game2048">
 <meta property="og:title" content="لعبة 2048 بالعربية">
 <meta property="og:description" content="ادمج الأرقام حتى تصل إلى 2048.">
 <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_153610_880073cf-c7b7-403e-9015-dd51e7472161.png">
@@ -16,6 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"2048","url":"https://ma7zooz.com/game2048","inLanguage":"ar","genre":"ذكاء","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
 <style>
   .hud{display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:14px}
   .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:8px 18px;text-align:center;min-width:92px}
@@ -41,14 +45,14 @@
 
 <header class="top">
   <div class="wrap mast">
-    <a href="index.html" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
-    <nav class="nav"><a href="index.html">الرئيسية</a><a href="word.html">كلمة اليوم</a><a href="memory.html">الذاكرة</a></nav>
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/memory">الذاكرة</a></nav>
     <span class="grow"></span>
   </div>
 </header>
 
 <main class="gamewrap">
-  <div class="crumbs"><a href="index.html">الرئيسية</a> ← ألعاب ذكاء ← 2048</div>
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذكاء ← 2048</div>
   <div class="gtitle"><h1>2048 🔢</h1><p>ادمج الأرقام المتشابهة للوصول إلى 2048</p></div>
 
   <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
@@ -64,6 +68,14 @@
     <div class="overlay" id="ov"><h2 id="ovt">🎉</h2><button class="btn" id="ovBtn">العب مجدداً</button></div>
   </div>
   <p class="hint">على الكمبيوتر: استخدم مفاتيح الأسهم ⬅️➡️⬆️⬇️ · على الجوال: اسحب بإصبعك</p>
+
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة 2048</h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">لعبة 2048 لغز إدمان بالأرقام: حرّك البلاطات وادمج المتشابهة منها لمضاعفة الأرقام حتى تصل إلى بلاطة 2048. تُلعب بالسحب على الجوال وبالأسهم على الكمبيوتر، وتسجّل أعلى نقاطك. مجانية وبلا تحميل.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/sudoku" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سودوكو</a> · <a href="/word" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كلمة اليوم</a> · <a href="/snake" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">الأفعى</a> · <a href="/minesweeper" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كانسة الألغام</a> · <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
 </main>
 
 <footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>

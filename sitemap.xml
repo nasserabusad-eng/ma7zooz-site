@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ma7zooz.com/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/g-daily-code.html</loc><changefreq>daily</changefreq></url>
-  <url><loc>https://ma7zooz.com/word.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/sudoku.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/game2048.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/snake.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/minesweeper.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/dodge.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/g-catch-luck.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/g-hextris.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/g-blocks.html</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://ma7zooz.com/memory.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://ma7zooz.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ma7zooz.com/g-daily-code</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ma7zooz.com/word</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ma7zooz.com/sudoku</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ma7zooz.com/game2048</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ma7zooz.com/snake</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ma7zooz.com/g-catch-luck</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ma7zooz.com/g-hextris</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ma7zooz.com/g-blocks</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ma7zooz.com/minesweeper</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ma7zooz.com/dodge</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ma7zooz.com/memory</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

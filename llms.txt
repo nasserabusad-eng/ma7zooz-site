@@ -1,0 +1,22 @@
+# محظوظ (ma7zooz.com)
+
+> منصة ألعاب مجانية بالعربية تُلعب مباشرة في المتصفح على الجوال والكمبيوتر، بلا تحميل وبلا تسجيل — ألعاب كلمات وذكاء وأرقام وأركيد وذاكرة وسباق.
+
+ma7zooz.com (Ma7zooz / محظوظ) is a free Arabic-language browser-games site. Every game is HTML5 and plays instantly on both mobile and desktop, with no download and no signup.
+
+## Games
+- [لغز الأرقام اليومي](https://ma7zooz.com/g-daily-code): daily 4-digit secret-number guessing puzzle in Arabic, with streaks and shareable results.
+- [كلمة اليوم](https://ma7zooz.com/word): Arabic Wordle — guess the 5-letter word in 6 tries with an on-screen Arabic keyboard.
+- [سودوكو](https://ma7zooz.com/sudoku): classic 9x9 Sudoku with three difficulty levels and a timer.
+- [2048](https://ma7zooz.com/game2048): merge matching number tiles to reach 2048.
+- [الأفعى](https://ma7zooz.com/snake): classic Snake with swipe and keyboard controls.
+- [اجمع الحظ](https://ma7zooz.com/g-catch-luck): fast arcade catch-and-score game.
+- [هكس محظوظ](https://ma7zooz.com/g-hextris): hexagonal Tetris-style arcade game.
+- [أحجار محظوظ](https://ma7zooz.com/g-blocks): classic falling-blocks stacking puzzle.
+- [كانسة الألغام](https://ma7zooz.com/minesweeper): classic Minesweeper logic game.
+- [سباق سريع](https://ma7zooz.com/dodge): fast lane-dodging car game.
+- [لعبة الذاكرة](https://ma7zooz.com/memory): card-matching memory game.
+
+## More
+- [الرئيسية / Home](https://ma7zooz.com/): full games list
+- [Sitemap](https://ma7zooz.com/sitemap.xml)
