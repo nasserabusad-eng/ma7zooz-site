@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لعبة إكس أو (اكس او) أونلاين | Tic-Tac-Toe ضد الكمبيوتر أو صديق | محظوظ</title>
+<meta name="description" content="العب لعبة إكس أو (اكس او) أونلاين مجاناً: ضد الكمبيوتر بمستويين سهل وصعب، أو مع صديق على نفس الجهاز. تعمل على الجوال والكمبيوتر بدون تحميل. Play Tic-Tac-Toe online free vs computer or a friend.">
+<meta name="keywords" content="لعبة اكس او, لعبة إكس أو, اكس او اون لاين, لعبة xo, tic tac toe, tic-tac-toe online, العاب ذكاء, العاب جماعية, العاب بدون تحميل">
+<link rel="canonical" href="https://ma7zooz.com/tictactoe">
+<meta property="og:title" content="إكس أو — Tic-Tac-Toe | محظوظ">
+<meta property="og:description" content="العب إكس أو ضد الكمبيوتر أو مع صديق — Play Tic-Tac-Toe free online.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_170555_9daee836-0851-4eb3-b4c9-6de84ef176f2.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"إكس أو","alternateName":"Tic-Tac-Toe","url":"https://ma7zooz.com/tictactoe","inLanguage":"ar","genre":"ذكاء","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:82px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:20px;color:#fff}
+  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
+  .status{text-align:center;min-height:26px;color:var(--y);font-weight:800;font-size:16px;margin:0 0 12px}
+  .modes{display:flex;gap:8px;justify-content:center;margin:0 0 14px;flex-wrap:wrap}
+  .mode{background:var(--card2);border:1px solid var(--line2);color:#fff;font-weight:800;font-family:"Tajawal",sans-serif;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer}
+  .mode.on{background:linear-gradient(135deg,var(--p1),var(--p2));border-color:transparent}
+  .overlay{position:fixed;inset:0;background:rgba(20,11,46,.88);display:none;align-items:center;justify-content:center;z-index:9999}
+  .overlay.show{display:flex}
+  .win{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:28px 34px;text-align:center;max-width:90vw}
+  .win h2{font-family:"Baloo Bhaijaan 2",sans-serif;color:#fff;font-size:28px;margin:0 0 8px}
+  .win p{color:var(--muted);margin:0 0 16px}
+  button{touch-action:manipulation}
+
+  .ttt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:min(88vw,360px);margin:0 auto;direction:ltr}
+  .tc{aspect-ratio:1;background:var(--card);border:2px solid var(--line2);border-radius:16px;color:#fff;font-family:"Baloo Bhaijaan 2",sans-serif;font-size:clamp(40px,14vw,64px);font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
+  .tc:hover:not(:disabled){border-color:var(--p1)}
+  .tc.x{color:var(--p3)}.tc.o{color:var(--y)}
+  .tc.win{background:linear-gradient(135deg,var(--p1),var(--p2));border-color:transparent;color:#fff}
+  .tc:disabled{cursor:default}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"كيف أفوز في لعبة إكس أو؟","acceptedAnswer":{"@type":"Answer","text":"كوّن صفاً من ثلاث علامات متتالية أفقياً أو عمودياً أو قطرياً. ابدأ بالمركز أو بأحد الأركان، وانتبه لحظر خصمك قبل أن يكمل صفه."}},{"@type":"Question","name":"هل يمكن هزيمة الكمبيوتر في المستوى الصعب؟","acceptedAnswer":{"@type":"Answer","text":"المستوى الصعب يلعب بشكل مثالي، لذلك أفضل نتيجة ممكنة ضده هي التعادل. جرّب المستوى السهل إن أردت الفوز."}},{"@type":"Question","name":"هل أستطيع اللعب مع صديق؟","acceptedAnswer":{"@type":"Answer","text":"نعم، اختر «لاعبان» وتناوبا على اللعب على نفس الجهاز."}}]}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
+    <span class="grow"></span>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذكاء ← إكس أو</div>
+  <div class="gtitle"><h1>إكس أو ⭕ <span class="en-h" lang="en" dir="ltr">Tic-Tac-Toe</span></h1><p>اصنع صفاً من ثلاث علامات قبل خصمك — ضد الكمبيوتر أو مع صديق</p><p class="en-sub" lang="en" dir="ltr">Free Tic-Tac-Toe vs computer or a friend</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l" id="l1">أنت (X)</div><div class="v" id="s1">0</div></div>
+    <div class="score"><div class="l">تعادل</div><div class="v" id="s2">0</div></div>
+    <div class="score"><div class="l" id="l3">الكمبيوتر (O)</div><div class="v" id="s3">0</div></div>
+  </div>
+  <div class="modes" id="modes">
+    <button class="mode on" data-m="easy">سهل</button>
+    <button class="mode" data-m="hard">صعب</button>
+    <button class="mode" data-m="two">لاعبان</button>
+  </div>
+  <div class="status" id="status" aria-live="polite"></div>
+  <div class="ttt" id="ttt"></div>
+  <div style="text-align:center;margin-top:16px"><button class="btn" id="newBtn">جولة جديدة</button></div>
+  <p class="hint">اضغط على أي خانة · على الكمبيوتر يمكنك استخدام المفاتيح 1–9</p>
+
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة إكس أو <span lang="en" dir="ltr" style="font-size:.8em;color:var(--muted)">(Tic-Tac-Toe)</span></h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">إكس أو (اكس او) هي اللعبة الكلاسيكية على شبكة 3×3: ضع علامتك في خانة فارغة وحاول أن تكوّن صفاً من ثلاث علامات أفقياً أو عمودياً أو قطرياً قبل خصمك. اختر المستوى السهل للتسلية أو الصعب لتواجه كمبيوتراً لا يُهزم، أو العب مع صديق على نفس الجهاز. مجانية وتعمل على الجوال والكمبيوتر بلا تحميل.</p>
+  <p lang="en" dir="ltr" style="color:var(--muted);line-height:1.8;margin:0 0 14px;text-align:left">Tic-Tac-Toe (also called Xs and Os) is the classic 3×3 strategy game: place your mark and be the first to get three in a row, column or diagonal. Play against the computer on easy or unbeatable hard mode, or take turns with a friend on the same device. Free in your browser on mobile and desktop, no download.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/g-daily-code" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لغز الأرقام</a> · <a href="/word" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كلمة اليوم</a> · <a href="/sudoku" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سودوكو</a> · <a href="/snake" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">الأفعى</a> · <a href="/g-catch-luck" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">اجمع الحظ</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
+<section class="gfaq" style="max-width:760px;margin:22px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">أسئلة شائعة عن إكس أو</h2>
+  <details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">كيف أفوز في لعبة إكس أو؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">كوّن صفاً من ثلاث علامات متتالية أفقياً أو عمودياً أو قطرياً. ابدأ بالمركز أو بأحد الأركان، وانتبه لحظر خصمك قبل أن يكمل صفه.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل يمكن هزيمة الكمبيوتر في المستوى الصعب؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">المستوى الصعب يلعب بشكل مثالي، لذلك أفضل نتيجة ممكنة ضده هي التعادل. جرّب المستوى السهل إن أردت الفوز.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل أستطيع اللعب مع صديق؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">نعم، اختر «لاعبان» وتناوبا على اللعب على نفس الجهاز.</p></details>
+</section>
+</main>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  var KEY_S='ma7zooz_ttt_v1', mode='easy', b, turn, over, humanStarts=true, busy=false;
+  var cells=[], grid=document.getElementById('ttt'), st=document.getElementById('status');
+  var scores; try{ scores=JSON.parse(localStorage.getItem(KEY_S)||'null'); }catch(e){}
+  if(!scores||!scores.easy) scores={easy:{w:0,d:0,l:0},hard:{w:0,d:0,l:0},two:{w:0,d:0,l:0}};
+  function saveS(){ try{ localStorage.setItem(KEY_S,JSON.stringify(scores)); }catch(e){} }
+  for(var i=0;i<9;i++){ (function(i){ var c=document.createElement('button'); c.type='button'; c.className='tc'; c.setAttribute('aria-label','خانة '+(i+1));
+    c.addEventListener('click',function(){ play(i); }); grid.appendChild(c); cells.push(c); })(i); }
+  function winner(bd){ for(var k=0;k<8;k++){ var L=LINES[k]; if(bd[L[0]]&&bd[L[0]]===bd[L[1]]&&bd[L[0]]===bd[L[2]]) return {p:bd[L[0]],line:L}; } return null; }
+  function full(bd){ return bd.every(function(x){ return x; }); }
+  function minimax(bd,p,me,depth){
+    var w=winner(bd); if(w) return w.p===me?10-depth:depth-10;
+    if(full(bd)) return 0;
+    var best=p===me?-99:99;
+    for(var i=0;i<9;i++){ if(bd[i]) continue; bd[i]=p; var s=minimax(bd,p==='X'?'O':'X',me,depth+1); bd[i]=null;
+      if(p===me){ if(s>best) best=s; } else { if(s<best) best=s; } }
+    return best;
+  }
+  function aiMove(){
+    var free=[]; for(var i=0;i<9;i++) if(!b[i]) free.push(i);
+    if(mode==='easy' && Math.random()<0.7) return free[Math.floor(Math.random()*free.length)];
+    var best=-99, moves=[];
+    free.forEach(function(i){ b[i]='O'; var s=minimax(b,'X','O',1); b[i]=null; if(s>best){ best=s; moves=[i]; } else if(s===best) moves.push(i); });
+    return moves[Math.floor(Math.random()*moves.length)];
+  }
+  function labels(){
+    document.getElementById('l1').textContent=mode==='two'?'اللاعب X':'أنت (X)';
+    document.getElementById('l3').textContent=mode==='two'?'اللاعب O':'الكمبيوتر (O)';
+    var s=scores[mode]; document.getElementById('s1').textContent=s.w; document.getElementById('s2').textContent=s.d; document.getElementById('s3').textContent=s.l;
+  }
+  function render(wl){
+    cells.forEach(function(c,i){ var v=b[i]; c.textContent=v||''; c.className='tc'+(v==='X'?' x':v==='O'?' o':'')+(wl&&wl.indexOf(i)>-1?' win':''); c.disabled=!!v||over; });
+  }
+  function finish(){
+    var w=winner(b), s=scores[mode];
+    if(w){ over=true; if(w.p==='X'){ s.w++; st.textContent=mode==='two'?'🎉 فاز اللاعب X':'🎉 فزت!'; } else { s.l++; st.textContent=mode==='two'?'🎉 فاز اللاعب O':'😅 فاز الكمبيوتر'; } render(w.line); saveS(); labels(); return true; }
+    if(full(b)){ over=true; s.d++; st.textContent='🤝 تعادل'; render(); saveS(); labels(); return true; }
+    return false;
+  }
+  function setTurnMsg(){ st.textContent=mode==='two'?('دور اللاعب '+turn):(turn==='X'?'دورك (X)':'الكمبيوتر يفكّر…'); }
+  function computerTurn(){
+    if(over||mode==='two'||turn!=='O') return; busy=true; setTurnMsg();
+    setTimeout(function(){ var m=aiMove(); b[m]='O'; busy=false; render(); if(!finish()){ turn='X'; setTurnMsg(); render(); } },380);
+  }
+  function play(i){
+    if(over||busy||b[i]) return;
+    if(mode==='two'){ b[i]=turn; render(); if(!finish()){ turn=turn==='X'?'O':'X'; setTurnMsg(); } return; }
+    if(turn!=='X') return;
+    b[i]='X'; render(); if(!finish()){ turn='O'; render(); computerTurn(); }
+  }
+  function newRound(first){
+    b=[null,null,null,null,null,null,null,null,null]; over=false; busy=false;
+    if(!first) humanStarts=!humanStarts;
+    turn=(mode==='two'||humanStarts)?'X':'O';
+    render(); labels(); setTurnMsg(); if(mode!=='two'&&turn==='O') computerTurn();
+  }
+  document.getElementById('modes').addEventListener('click',function(e){
+    var t=e.target.closest('.mode'); if(!t) return; mode=t.dataset.m;
+    document.querySelectorAll('#modes .mode').forEach(function(x){ x.classList.toggle('on',x===t); });
+    humanStarts=true; newRound(true);
+  });
+  document.getElementById('newBtn').addEventListener('click',function(){ newRound(false); });
+  var PAD={'7':0,'8':1,'9':2,'4':3,'5':4,'6':5,'1':6,'2':7,'3':8};
+  document.addEventListener('keydown',function(e){ if(e.ctrlKey||e.metaKey||e.altKey) return; if(PAD.hasOwnProperty(e.key)){ e.preventDefault(); play(PAD[e.key]); } });
+  newRound(true);
+})();
+</script>
+</body>
+</html>

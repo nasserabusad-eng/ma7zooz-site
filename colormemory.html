@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لعبة ذاكرة الألوان أونلاين | Color Memory — تذكّر التسلسل مجاناً | محظوظ</title>
+<meta name="description" content="العب لعبة ذاكرة الألوان أونلاين مجاناً: شاهد تسلسل الألوان والأصوات ثم كرّره بدقة، وكل جولة أصعب من التي قبلها. لعبة تدريب الذاكرة والتركيز على الجوال والكمبيوتر. Play Color Memory free online.">
+<meta name="keywords" content="لعبة ذاكرة الالوان, لعبة تذكر الالوان, لعبة تسلسل الالوان, لعبة تقوية الذاكرة, color memory game, simon says game online, memory sequence game, العاب ذاكرة, العاب تركيز, العاب بدون تحميل">
+<link rel="canonical" href="https://ma7zooz.com/colormemory">
+<meta property="og:title" content="ذاكرة الألوان — Color Memory | محظوظ">
+<meta property="og:description" content="شاهد التسلسل ثم كرّره — Play Color Memory free online.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_170555_9daee836-0851-4eb3-b4c9-6de84ef176f2.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"ذاكرة الألوان","alternateName":"Color Memory","url":"https://ma7zooz.com/colormemory","inLanguage":"ar","genre":"ذاكرة","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:82px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:20px;color:#fff}
+  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
+  .status{text-align:center;min-height:26px;color:var(--y);font-weight:800;font-size:16px;margin:0 0 12px}
+  .modes{display:flex;gap:8px;justify-content:center;margin:0 0 14px;flex-wrap:wrap}
+  .mode{background:var(--card2);border:1px solid var(--line2);color:#fff;font-weight:800;font-family:"Tajawal",sans-serif;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer}
+  .mode.on{background:linear-gradient(135deg,var(--p1),var(--p2));border-color:transparent}
+  .overlay{position:fixed;inset:0;background:rgba(20,11,46,.88);display:none;align-items:center;justify-content:center;z-index:9999}
+  .overlay.show{display:flex}
+  .win{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:28px 34px;text-align:center;max-width:90vw}
+  .win h2{font-family:"Baloo Bhaijaan 2",sans-serif;color:#fff;font-size:28px;margin:0 0 8px}
+  .win p{color:var(--muted);margin:0 0 16px}
+  button{touch-action:manipulation}
+
+  .cm{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:min(88vw,360px);margin:0 auto;direction:ltr}
+  .pad{aspect-ratio:1;border:none;border-radius:24px;cursor:pointer;opacity:.45;transition:opacity .08s,transform .08s,filter .08s;padding:0}
+  .pad.g{background:#22c55e;border-top-left-radius:100%}
+  .pad.r{background:#ef4444;border-top-right-radius:100%}
+  .pad.y{background:#facc15;border-bottom-left-radius:100%}
+  .pad.b{background:#3b82f6;border-bottom-right-radius:100%}
+  .pad.lit{opacity:1;transform:scale(1.03);filter:brightness(1.3)}
+  .pad:disabled{cursor:default}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"كيف تُلعب لعبة ذاكرة الألوان؟","acceptedAnswer":{"@type":"Answer","text":"اضغط «ابدأ» وشاهد الألوان تضيء بالتسلسل، ثم اضغط عليها بالترتيب نفسه. بعد كل نجاح يُضاف لون جديد."}},{"@type":"Question","name":"هل اللعبة تقوّي الذاكرة؟","acceptedAnswer":{"@type":"Answer","text":"هي تدريب ممتع للذاكرة قصيرة المدى والتركيز، وتحفظ أعلى جولة وصلت إليها."}},{"@type":"Question","name":"هل يمكنني كتم الصوت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، اضغط على زر الصوت 🔊 لكتمه أو تشغيله."}}]}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
+    <span class="grow"></span>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذاكرة ← ذاكرة الألوان</div>
+  <div class="gtitle"><h1>ذاكرة الألوان 🎨 <span class="en-h" lang="en" dir="ltr">Color Memory</span></h1><p>شاهد تسلسل الألوان ثم كرّره — كم جولة تتذكّر؟</p><p class="en-sub" lang="en" dir="ltr">Free sequence memory game — repeat the pattern, round after round</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l">الجولة</div><div class="v" id="rd">0</div></div>
+    <div class="score"><div class="l">الأفضل</div><div class="v" id="best">0</div></div>
+    <button class="btn" id="startBtn">ابدأ</button>
+    <button class="mode" id="snd" aria-label="الصوت">🔊</button>
+  </div>
+  <div class="status" id="status" aria-live="polite">اضغط «ابدأ»</div>
+  <div class="cm" id="cm">
+    <button type="button" class="pad g" data-i="0" aria-label="أخضر"></button>
+    <button type="button" class="pad r" data-i="1" aria-label="أحمر"></button>
+    <button type="button" class="pad y" data-i="2" aria-label="أصفر"></button>
+    <button type="button" class="pad b" data-i="3" aria-label="أزرق"></button>
+  </div>
+  <p class="hint">اضغط الألوان بنفس الترتيب · على الكمبيوتر: المفاتيح 1–4 (بترتيب القراءة)</p>
+
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة ذاكرة الألوان <span lang="en" dir="ltr" style="font-size:.8em;color:var(--muted)">(Color Memory)</span></h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">ذاكرة الألوان لعبة تدريب للذاكرة: تضيء الألوان بتسلسل معيّن مع نغمة لكل لون، وعليك أن تكرّر التسلسل نفسه بالضغط على الألوان بالترتيب. في كل جولة يُضاف لون جديد فيطول التسلسل وتزداد السرعة، وتنتهي اللعبة عند أول خطأ. تناسب الكبار والأطفال، وتُلعب باللمس على الجوال وبالفأرة أو المفاتيح 1–4 على الكمبيوتر، مجاناً وبلا تحميل.</p>
+  <p lang="en" dir="ltr" style="color:var(--muted);line-height:1.8;margin:0 0 14px;text-align:left">Color Memory is a sequence memory game: the colored pads light up in a pattern (each with its own tone) and you must repeat it in the same order. Every round adds one more step and the pace picks up; one mistake ends the run. Good brain training for kids and adults. Tap on mobile, or click or press keys 1–4 on desktop. Free, no download.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/minesweeper" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كانسة الألغام</a> · <a href="/dodge" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سباق سريع</a> · <a href="/tictactoe" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">إكس أو</a> · <a href="/fourinarow" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">أربعة في صف</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
+<section class="gfaq" style="max-width:760px;margin:22px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">أسئلة شائعة عن ذاكرة الألوان</h2>
+  <details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">كيف تُلعب لعبة ذاكرة الألوان؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">اضغط «ابدأ» وشاهد الألوان تضيء بالتسلسل، ثم اضغط عليها بالترتيب نفسه. بعد كل نجاح يُضاف لون جديد.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل اللعبة تقوّي الذاكرة؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">هي تدريب ممتع للذاكرة قصيرة المدى والتركيز، وتحفظ أعلى جولة وصلت إليها.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل يمكنني كتم الصوت؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">نعم، اضغط على زر الصوت 🔊 لكتمه أو تشغيله.</p></details>
+</section>
+</main>
+<div class="overlay" id="ov"><div class="win"><h2>❌ أخطأت!</h2><p id="wp"></p><button class="btn" id="ovBtn">العب مجدداً</button></div></div>
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var KEY_B='ma7zooz_cmem_best', pads=[].slice.call(document.querySelectorAll('.pad')), seq=[], pos=0, accept=false, round=0, token=0, muted=false;
+  var best=0; try{ best=parseInt(localStorage.getItem(KEY_B)||'0',10)||0; }catch(e){}
+  var rdEl=document.getElementById('rd'), bestEl=document.getElementById('best'), st=document.getElementById('status'); bestEl.textContent=best;
+  var AC=null, FREQ=[392,330,262,523];
+  function initAudio(){ try{ if(!AC){ var C=window.AudioContext||window.webkitAudioContext; if(!C) return; AC=new C(); } if(AC.state==='suspended') AC.resume(); }catch(e){} }
+  function tone(i,ms){
+    if(muted||!AC) return;
+    try{
+      var o=AC.createOscillator(), g=AC.createGain(); o.type='sine'; o.frequency.value=FREQ[i]; o.connect(g); g.connect(AC.destination);
+      var t=AC.currentTime; g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.25,t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+ms/1000); o.start(t); o.stop(t+ms/1000+0.03);
+    }catch(e){}
+  }
+  function light(i,ms){ pads[i].classList.add('lit'); tone(i,ms); setTimeout(function(){ pads[i].classList.remove('lit'); },ms); }
+  function lock(v){ pads.forEach(function(p){ p.disabled=v; }); accept=!v; }
+  function play(tk){
+    lock(true); st.textContent='شاهد التسلسل…';
+    var speed=Math.max(240,620-seq.length*22), i=0;
+    function step(){
+      if(tk!==token) return;
+      if(i>=seq.length){ pos=0; lock(false); st.textContent='دورك — كرّر التسلسل'; return; }
+      light(seq[i],speed*0.62); i++; setTimeout(step,speed);
+    }
+    setTimeout(step,500);
+  }
+  function next(){ seq.push(Math.floor(Math.random()*4)); round=seq.length; rdEl.textContent=round; play(++token); }
+  function press(i){
+    if(!accept) return; initAudio(); light(i,170);
+    if(i!==seq[pos]){ fail(); return; }
+    pos++; if(pos===seq.length){ lock(true); st.textContent='👏 أحسنت!'; var tk=token; setTimeout(function(){ if(tk===token) next(); },700); }
+  }
+  function fail(){
+    lock(true); token++; var score=seq.length-1, nb=false; if(score>best){ best=score; nb=true; bestEl.textContent=best; try{ localStorage.setItem(KEY_B,best); }catch(e){} }
+    st.textContent='انتهت اللعبة';
+    document.getElementById('wp').textContent='وصلت إلى الجولة '+score+' · الأفضل: '+best+(nb&&score>0?' — رقم قياسي جديد! 🏅':'');
+    setTimeout(function(){ document.getElementById('ov').classList.add('show'); },300);
+  }
+  function start(){ initAudio(); token++; seq=[]; pos=0; round=0; rdEl.textContent='0'; document.getElementById('ov').classList.remove('show'); document.getElementById('startBtn').textContent='إعادة'; next(); }
+  pads.forEach(function(p){ p.addEventListener('pointerdown',function(e){ e.preventDefault(); press(+p.dataset.i); }); });
+  document.getElementById('startBtn').addEventListener('click',start);
+  document.getElementById('ovBtn').addEventListener('click',start);
+  document.getElementById('snd').addEventListener('click',function(){ muted=!muted; this.textContent=muted?'🔇':'🔊'; });
+  var MAP={'1':0,'2':1,'3':2,'4':3};
+  document.addEventListener('keydown',function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey) return;
+    if(MAP.hasOwnProperty(e.key)){ e.preventDefault(); press(MAP[e.key]); }
+  });
+  lock(true);
+})();
+</script>
+</body>
+</html>
