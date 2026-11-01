@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-en-title="Lucky Bird (Flappy-style) — Play Free Online | Ma7zooz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("ma7zooz_lang")==="en"){var d=document.documentElement;d.lang="en";d.dir="ltr"}}catch(e){}</script>
+<title>لعبة الطائر المحظوظ أونلاين | Lucky Bird — لعبة فلابي بيرد مجاناً | محظوظ</title>
+<meta name="description" content="العب لعبة الطائر المحظوظ أونلاين مجاناً — لعبة الطائر الذي يطير بين الأنابيب على طريقة فلابي بيرد. اضغط أو المس الشاشة ليرفرف الطائر ولا تلمس الأنابيب. على الجوال والكمبيوتر بلا تحميل. Play Lucky Bird, a free Flappy-style game: tap to flap through the pipes.">
+<meta name="keywords" content="لعبة الطائر, لعبة فلابي بيرد, فلابي بيرد, لعبة الطائر الذي يطير, لعبة الطيران بين الأنابيب, العاب مجانية, العاب اونلاين, flappy bird, flappy bird online, lucky bird, tap to flap game, bird game online">
+<link rel="canonical" href="https://ma7zooz.com/luckybird">
+<meta property="og:title" content="لعبة الطائر المحظوظ — Lucky Bird (فلابي بيرد) | محظوظ">
+<meta property="og:description" content="اضغط ليرفرف الطائر ومرّ بين الأنابيب — كم أنبوباً تعبر؟ — Tap to flap through the pipes!">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_170555_9daee836-0851-4eb3-b4c9-6de84ef176f2.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"الطائر المحظوظ","alternateName":"Lucky Bird (Flappy-style)","url":"https://ma7zooz.com/luckybird","inLanguage":"ar","genre":"أركيد","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:82px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:20px;color:#fff}
+  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
+  .status{text-align:center;min-height:26px;color:var(--y);font-weight:800;font-size:16px;margin:0 0 12px}
+  button{touch-action:manipulation}
+  .stage{width:min(94vw,420px);margin:0 auto;position:relative}
+  canvas{width:100%;aspect-ratio:7/10;display:block;background:var(--card);border:3px solid var(--p1);border-radius:16px;touch-action:none;cursor:pointer}
+  .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center;padding:20px}
+  .mid .big{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:30px;color:#fff;text-shadow:0 3px 12px rgba(0,0,0,.6);margin:0 0 6px}
+  .mid .sm{color:#fff;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.7);margin:0}
+  .mid[hidden]{display:none}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"كيف ألعب لعبة الطائر المحظوظ؟","acceptedAnswer":{"@type":"Answer","text":"اضغط على الشاشة أو المس اللوحة (أو اضغط المسافة أو السهم لأعلى على الكمبيوتر) ليرفرف الطائر ويرتفع قليلاً. حاول أن تمرّ من الفتحة بين كل زوج من الأنابيب دون أن تلمسها."}},{"@type":"Question","name":"هل هذه نفس لعبة فلابي بيرد؟","acceptedAnswer":{"@type":"Answer","text":"هي لعبة مشابهة في الفكرة (طائر يرفرف بين الأنابيب) لكنها لعبتنا الخاصة بتصميم وصوت ورسومات مختلفة، وتعمل مباشرة في المتصفح."}},{"@type":"Question","name":"هل اللعبة مجانية وتعمل على الجوال؟","acceptedAnswer":{"@type":"Answer","text":"نعم، مجانية بالكامل وتعمل على الجوال والكمبيوتر بلا تحميل، وتحفظ أعلى نتيجة وصلت إليها على جهازك."}},{"@type":"Question","name":"كيف أحصل على نتيجة أعلى؟","acceptedAnswer":{"@type":"Answer","text":"حافظ على الطائر في منتصف الشاشة تقريباً، واستخدم ضغطات خفيفة ومنتظمة بدل الضغط المتكرر، وراقب ارتفاع الفتحة التالية قبل أن تصل إليها."}}]}
+</script>
+<script src="assets/i18n.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
+    <span class="grow"></span>
+    <button type="button" class="langbtn" id="langBtn" data-noi18n aria-label="Switch to English" lang="en">EN</button>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب أركيد ← الطائر المحظوظ</div>
+  <div class="gtitle"><h1>الطائر المحظوظ 🐦</h1><p>اضغط ليرفرف الطائر ومرّ بين الأنابيب دون أن تلمسها — كم أنبوباً تعبر؟</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l">النقاط</div><div class="v" id="sc">0</div></div>
+    <div class="score"><div class="l">الأفضل</div><div class="v" id="best">0</div></div>
+  </div>
+  <div class="stage">
+    <canvas id="cv" width="350" height="500" aria-label="الطائر المحظوظ"></canvas>
+    <div class="mid" id="mid"><p class="big" id="midBig">اضغط للبدء</p><p class="sm" id="midSm">المس الشاشة ليرفرف الطائر</p></div>
+  </div>
+  <p class="hint">اضغط على اللوحة أو مفتاح المسافة / السهم لأعلى · مرّ من الفتحة بين الأنابيب</p>
+
+<a class="raqam-banner" href="https://raqam.ai/?utm_source=ma7zooz&amp;utm_medium=banner&amp;utm_campaign=games" target="_blank" rel="noopener"><span class="rb-mark">رقم</span><span class="rb-txt"><b>رقم · raqam.ai</b><small>أخبار الذكاء الاصطناعي والاقتصاد والتقنية وأدوات مالية بالعربية</small></span><span class="rb-go">زوروا الموقع ←</span></a>
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة الطائر المحظوظ</h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">الطائر المحظوظ لعبة أركيد بسيطة وصعبة في الوقت نفسه على طريقة لعبة فلابي بيرد الشهيرة: يسقط الطائر بفعل الجاذبية، وكل ضغطة (أو لمسة على الجوال أو مفتاح المسافة على الكمبيوتر) ترفعه قليلاً. مرّ من الفتحة بين الأنابيب لتكسب نقطة، وإذا لمست أنبوباً أو الأرض تنتهي الجولة. اللعبة تعمل أونلاين مجاناً وبلا تحميل وتحفظ أعلى نتيجة لك.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/dodge" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سباق سريع</a> · <a href="/molesmash" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">اضرب الخلد</a> · <a href="/snake" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">الأفعى</a> · <a href="/reaction" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">اختبار السرعة</a> · <a href="/game2048" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">2048</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
+<section class="gfaq" style="max-width:760px;margin:22px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">أسئلة شائعة عن الطائر المحظوظ</h2>
+  <details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">كيف ألعب لعبة الطائر المحظوظ؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">اضغط على الشاشة أو المس اللوحة (أو اضغط المسافة أو السهم لأعلى على الكمبيوتر) ليرفرف الطائر ويرتفع قليلاً. حاول أن تمرّ من الفتحة بين كل زوج من الأنابيب دون أن تلمسها.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل هذه نفس لعبة فلابي بيرد؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">هي لعبة مشابهة في الفكرة (طائر يرفرف بين الأنابيب) لكنها لعبتنا الخاصة بتصميم وصوت ورسومات مختلفة، وتعمل مباشرة في المتصفح.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل اللعبة مجانية وتعمل على الجوال؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">نعم، مجانية بالكامل وتعمل على الجوال والكمبيوتر بلا تحميل، وتحفظ أعلى نتيجة وصلت إليها على جهازك.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">كيف أحصل على نتيجة أعلى؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">حافظ على الطائر في منتصف الشاشة تقريباً، واستخدم ضغطات خفيفة ومنتظمة بدل الضغط المتكرر، وراقب ارتفاع الفتحة التالية قبل أن تصل إليها.</p></details>
+</section>
+</main>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var cv=document.getElementById('cv'), cx=cv.getContext('2d'), W=cv.width, H=cv.height;
+  var scEl=document.getElementById('sc'), bestEl=document.getElementById('best'), mid=document.getElementById('mid'), midBig=document.getElementById('midBig'), midSm=document.getElementById('midSm');
+  var KEY='ma7zooz_luckybird_best', best=0; try{ best=parseInt(localStorage.getItem(KEY)||'0',10)||0; }catch(e){}
+  bestEl.textContent=best;
+  var GROUND=70, GAP=140, PIPEW=58, SPACING=190, SPEED=2.2, GRAV=0.42, FLAP=-6.9, R=14;
+  var bird, pipes, score, state, last, ground, over=0;
+  function reset(){ bird={x:90,y:H/2-40,v:0,rot:0}; pipes=[]; score=0; ground=0; scEl.textContent=0; for(var i=0;i<3;i++) addPipe(W+60+i*SPACING); }
+  function addPipe(x){ var min=70, max=H-GROUND-GAP-70; pipes.push({x:x,top:min+Math.random()*(max-min),passed:false}); }
+  function flap(){
+    if(state==='idle'){ state='play'; mid.hidden=true; }
+    if(state==='play'){ bird.v=FLAP; }
+    else if(state==='over' && performance.now()-over>550){ reset(); state='idle'; midBig.textContent='اضغط للبدء'; midSm.textContent='المس الشاشة ليرفرف الطائر'; mid.hidden=false; draw(); }
+  }
+  function die(){
+    state='over'; over=performance.now();
+    if(score>best){ best=score; bestEl.textContent=best; try{ localStorage.setItem(KEY,best); }catch(e){} midBig.textContent='رقم قياسي جديد! 🏆'; }
+    else midBig.textContent='انتهت اللعبة';
+    midSm.textContent='نقاطك: '+score+' · اضغط للعب مجدداً'; mid.hidden=false;
+  }
+  function step(k){
+    ground=(ground+SPEED*k)%24;
+    if(state==='idle'){ bird.y=H/2-40+Math.sin(performance.now()/260)*8; return; }
+    if(state==='over'){ if(bird.y<H-GROUND-R){ bird.v+=GRAV*k; bird.y+=bird.v*k; if(bird.y>H-GROUND-R) bird.y=H-GROUND-R; } return; }
+    bird.v+=GRAV*k; bird.y+=bird.v*k; bird.rot=Math.max(-.5,Math.min(1.2,bird.v/9));
+    for(var i=0;i<pipes.length;i++){
+      var p=pipes[i]; p.x-=SPEED*k;
+      if(!p.passed && p.x+PIPEW<bird.x-R){ p.passed=true; score++; scEl.textContent=score; }
+      var bx=bird.x, by=bird.y;
+      if(bx+R>p.x && bx-R<p.x+PIPEW && (by-R<p.top || by+R>p.top+GAP)){ die(); return; }
+    }
+    if(pipes[0].x+PIPEW<-4){ pipes.shift(); addPipe(pipes[pipes.length-1].x+SPACING); }
+    if(bird.y+R>=H-GROUND){ bird.y=H-GROUND-R; die(); }
+    else if(bird.y-R<0){ bird.y=R; bird.v=0; }
+  }
+  function pipe(p){
+    var g=cx.createLinearGradient(p.x,0,p.x+PIPEW,0); g.addColorStop(0,'#16a34a'); g.addColorStop(.5,'#4ade80'); g.addColorStop(1,'#15803d');
+    cx.fillStyle=g; cx.fillRect(p.x,0,PIPEW,p.top); cx.fillRect(p.x,p.top+GAP,PIPEW,H);
+    cx.fillStyle='#166534'; cx.fillRect(p.x-4,p.top-18,PIPEW+8,18); cx.fillRect(p.x-4,p.top+GAP,PIPEW+8,18);
+  }
+  function draw(){
+    var sky=cx.createLinearGradient(0,0,0,H); sky.addColorStop(0,'#3a1d7a'); sky.addColorStop(.6,'#a855f7'); sky.addColorStop(1,'#f472b6');
+    cx.fillStyle=sky; cx.fillRect(0,0,W,H);
+    cx.fillStyle='rgba(255,255,255,.14)'; for(var c=0;c<4;c++){ var cxp=((c*140-ground*3)%(W+120)+W+120)%(W+120)-60; cx.beginPath(); cx.arc(cxp,90+c*46,22,0,7); cx.arc(cxp+22,96+c*46,16,0,7); cx.arc(cxp-20,98+c*46,15,0,7); cx.fill(); }
+    pipes.forEach(pipe);
+    cx.fillStyle='#fde047'; cx.fillRect(0,H-GROUND,W,GROUND);
+    cx.fillStyle='#f59e0b'; for(var x=-24+(-ground);x<W;x+=24){ cx.fillRect(x,H-GROUND,12,10); }
+    cx.fillStyle='#b45309'; cx.fillRect(0,H-GROUND,W,4);
+    cx.save(); cx.translate(bird.x,bird.y); cx.rotate(bird.rot);
+    cx.fillStyle='#fde047'; cx.beginPath(); cx.arc(0,0,R,0,7); cx.fill(); cx.strokeStyle='#92400e'; cx.lineWidth=2; cx.stroke();
+    cx.fillStyle='#fff'; cx.beginPath(); cx.arc(5,-4,5,0,7); cx.fill(); cx.fillStyle='#111'; cx.beginPath(); cx.arc(7,-4,2.2,0,7); cx.fill();
+    cx.fillStyle='#fb923c'; cx.beginPath(); cx.moveTo(11,1); cx.lineTo(22,4); cx.lineTo(11,8); cx.closePath(); cx.fill();
+    var wing=(state==='play'&&bird.v<0)?-5:3; cx.fillStyle='#f59e0b'; cx.beginPath(); cx.ellipse(-4,wing+3,8,5,.3,0,7); cx.fill();
+    cx.restore();
+    if(state==='play'){ cx.fillStyle='#fff'; cx.font='800 44px "Baloo Bhaijaan 2",sans-serif'; cx.textAlign='center'; cx.shadowColor='rgba(0,0,0,.5)'; cx.shadowBlur=8; cx.fillText(score,W/2,70); cx.shadowBlur=0; }
+  }
+  function loop(t){
+    var dt=Math.min(40,t-last||16); last=t; step(dt/16.667); draw(); requestAnimationFrame(loop);
+  }
+  function press(e){ if(e) e.preventDefault(); flap(); }
+  cv.addEventListener('pointerdown',press);
+  document.addEventListener('keydown',function(e){ if(e.code==='Space'||e.key==='ArrowUp'||e.key==='w'||e.key==='W'){ e.preventDefault(); flap(); } });
+  reset(); state='idle'; last=0; requestAnimationFrame(loop);
+  window.__bird={get:function(){return {state:state,score:score,y:bird.y,v:bird.v,pipes:pipes};},flap:flap};
+})();
+</script>
+</body>
+</html>

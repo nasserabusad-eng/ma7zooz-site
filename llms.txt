@@ -22,6 +22,8 @@ ma7zooz.com (Ma7zooz / محظوظ) is a free Arabic-language browser-games site.
 - [اضرب الخلد — Mole Smash](https://ma7zooz.com/molesmash): 30-second whack-a-mole style reflex game.
 - [ذاكرة الألوان — Color Memory](https://ma7zooz.com/colormemory): sequence memory game with colors and tones.
 - [اختبار السرعة — Reaction Time Test](https://ma7zooz.com/reaction): 5-attempt reaction time test with a share button.
+- [الطائر المحظوظ — Lucky Bird](https://ma7zooz.com/luckybird): Flappy-style game — tap to flap the bird through the pipes.
+- [لعبة المشنقة — Hangman](https://ma7zooz.com/hangman): Arabic word-guessing game with categories, hearts and hints.
 
 ## More
 - [الرئيسية / Home](https://ma7zooz.com/): full games list

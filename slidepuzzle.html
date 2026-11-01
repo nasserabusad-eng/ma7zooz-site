@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-en-title="Sliding Puzzle — Play Free Online | Ma7zooz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("ma7zooz_lang")==="en"){var d=document.documentElement;d.lang="en";d.dir="ltr"}}catch(e){}</script>
 <title>أحجية الأرقام المنزلقة أونلاين | Sliding Puzzle (15 Puzzle) مجاناً | محظوظ</title>
 <meta name="description" content="العب أحجية الأرقام المنزلقة (لعبة 15 / 8 بازل) أونلاين مجاناً: رتّب البلاطات من 1 إلى 15 بأقل عدد من الحركات. على الجوال والكمبيوتر بدون تحميل. Play the free 15 Puzzle sliding tiles game online.">
 <meta name="keywords" content="لعبة الارقام المنزلقة, احجية الارقام, لعبة 15, لعبة 8 بازل, لعبة ترتيب الارقام, sliding puzzle, 15 puzzle, number slide puzzle, العاب ذكاء, العاب الغاز">
@@ -48,6 +49,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"كيف ألعب أحجية الأرقام المنزلقة؟","acceptedAnswer":{"@type":"Answer","text":"اضغط على أي بلاطة في نفس صف أو عمود الفراغ لتحريكها نحوه. الهدف ترتيب الأرقام تصاعدياً مع بقاء الفراغ في الزاوية السفلية."}},{"@type":"Question","name":"هل كل الألغاز قابلة للحل؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تُولَّد كل أحجية بخلط حركات صحيحة انطلاقاً من الوضع المرتّب، لذلك يمكن حلّها دائماً."}},{"@type":"Question","name":"هل أستطيع اللعب بلوحة المفاتيح؟","acceptedAnswer":{"@type":"Answer","text":"نعم، استخدم الأسهم لتحريك البلاطة نحو الفراغ."}}]}
 </script>
+<script src="assets/i18n.js" defer></script>
 </head>
 <body>
 
@@ -56,12 +58,13 @@
     <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
     <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
     <span class="grow"></span>
+    <button type="button" class="langbtn" id="langBtn" data-noi18n aria-label="Switch to English" lang="en">EN</button>
   </div>
 </header>
 
 <main class="gamewrap">
   <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذكاء ← أحجية الأرقام</div>
-  <div class="gtitle"><h1>أحجية الأرقام 🧩 <span class="en-h" lang="en" dir="ltr">Sliding Puzzle</span></h1><p>حرّك البلاطات ورتّب الأرقام بأقل عدد من الحركات</p><p class="en-sub" lang="en" dir="ltr">Free 15 Puzzle — slide the tiles into order</p></div>
+  <div class="gtitle"><h1>أحجية الأرقام 🧩</h1><p>حرّك البلاطات ورتّب الأرقام بأقل عدد من الحركات</p></div>
 
   <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
 
@@ -78,10 +81,10 @@
   <div class="sp" id="sp"></div>
   <p class="hint">اضغط على بلاطة بجانب الفراغ · على الكمبيوتر: الأسهم</p>
 
+<a class="raqam-banner" href="https://raqam.ai/?utm_source=ma7zooz&amp;utm_medium=banner&amp;utm_campaign=games" target="_blank" rel="noopener"><span class="rb-mark">رقم</span><span class="rb-txt"><b>رقم · raqam.ai</b><small>أخبار الذكاء الاصطناعي والاقتصاد والتقنية وأدوات مالية بالعربية</small></span><span class="rb-go">زوروا الموقع ←</span></a>
 <section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
-  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة أحجية الأرقام <span lang="en" dir="ltr" style="font-size:.8em;color:var(--muted)">(Sliding Puzzle)</span></h2>
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة أحجية الأرقام</h2>
   <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">أحجية الأرقام المنزلقة (تُعرف بلعبة 15) شبكة من البلاطات المرقّمة وفيها خانة فارغة واحدة: حرّك البلاطات المجاورة للفراغ حتى تصبح الأرقام مرتبة من 1 إلى 15. اختر الشبكة 3×3 للمبتدئين أو 4×4 للتحدي، وحاول تحطيم رقمك القياسي في عدد الحركات. تُلعب باللمس أو بالأسهم، مجاناً وبلا تحميل.</p>
-  <p lang="en" dir="ltr" style="color:var(--muted);line-height:1.8;margin:0 0 14px;text-align:left">The sliding puzzle (the classic 15 Puzzle) is a grid of numbered tiles with one empty space. Slide tiles into the gap until the numbers run in order. Pick the easy 3×3 grid or the full 4×4 and try to beat your best move count. Play by tapping tiles or with the arrow keys, free in your browser.</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
     <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/game2048" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">2048</a> · <a href="/g-blocks" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">أحجار محظوظ</a> · <a href="/minesweeper" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كانسة الألغام</a> · <a href="/dodge" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سباق سريع</a> · <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
   </div>

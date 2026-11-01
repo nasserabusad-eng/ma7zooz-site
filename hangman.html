@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-en-title="Hangman (Arabic Word Guess) — Play Free Online | Ma7zooz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("ma7zooz_lang")==="en"){var d=document.documentElement;d.lang="en";d.dir="ltr"}}catch(e){}</script>
+<title>لعبة المشنقة أونلاين بالعربي | تخمين الكلمة — Hangman مجاناً | محظوظ</title>
+<meta name="description" content="العب لعبة المشنقة (تخمين الكلمة) بالعربي أونلاين مجاناً: خمّن حروف الكلمة المخفية قبل أن تنتهي قلوبك الستة. فئات حيوانات وفواكه ودول وأشياء، على الجوال والكمبيوتر. Play Arabic Hangman free online — guess the hidden word.">
+<meta name="keywords" content="لعبة المشنقة, لعبة المشنقة بالعربي, لعبة تخمين الكلمة, لعبة تخمين الحروف, العاب كلمات, لعبة كلمات اونلاين, hangman, hangman arabic, hangman online, word guess game, العاب ذكاء">
+<link rel="canonical" href="https://ma7zooz.com/hangman">
+<meta property="og:title" content="لعبة المشنقة بالعربي — تخمين الكلمة | Hangman | محظوظ">
+<meta property="og:description" content="خمّن الحروف واكشف الكلمة المخفية قبل أن تفقد قلوبك — Guess the hidden Arabic word!">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3Gqr8cNvaHecl4CfmnUHSrGscwp/hf_20260916_170555_9daee836-0851-4eb3-b4c9-6de84ef176f2.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"لعبة المشنقة","alternateName":"Hangman (Arabic Word Guess)","url":"https://ma7zooz.com/hangman","inLanguage":"ar","genre":"ألعاب كلمات","gamePlatform":"Web browser","applicationCategory":"GameApplication","operatingSystem":"Any","author":{"@type":"Organization","name":"محظوظ"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<style>
+  .hud{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+  .score{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:7px 16px;text-align:center;min-width:82px}
+  .score .l{color:var(--muted);font-size:12px;font-weight:700}
+  .score .v{font-family:"Baloo Bhaijaan 2",sans-serif;font-size:20px;color:#fff}
+  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
+  .status{text-align:center;min-height:26px;color:var(--y);font-weight:800;font-size:16px;margin:0 0 12px}
+  button{touch-action:manipulation}
+  .cat{display:inline-block;background:rgba(253,224,71,.14);color:var(--y);border:1px solid rgba(253,224,71,.35);padding:4px 14px;border-radius:999px;font-weight:800;font-size:13px}
+  .top3{text-align:center;margin:0 0 10px}
+  .face{font-size:64px;line-height:1.1;text-align:center;margin:4px 0}
+  .hearts{text-align:center;font-size:24px;letter-spacing:4px;min-height:34px;margin:0 0 6px}
+  .word{display:flex;direction:rtl;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 18px}
+  .word span{width:44px;height:54px;border-radius:12px;background:var(--card2);border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-family:"Baloo Bhaijaan 2","Tajawal",sans-serif;font-size:30px;font-weight:800;color:#fff}
+  .word span.on{border-color:var(--green)}
+  .word span.miss{border-color:#f87171;color:#fecaca}
+  .kb{display:flex;direction:rtl;gap:6px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto 14px}
+  .kb button{min-width:40px;height:46px;padding:0 8px;border-radius:10px;border:1px solid var(--line2);background:var(--card2);color:#fff;font-size:20px;font-weight:800;font-family:"Baloo Bhaijaan 2","Tajawal",sans-serif;cursor:pointer}
+  .kb button:hover:not(:disabled){border-color:var(--p1)}
+  .kb button.ok{background:#16a34a;border-color:#16a34a}
+  .kb button.no{background:#7f1d1d;border-color:#7f1d1d;opacity:.7}
+  .kb button:disabled{cursor:default}
+  .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  @media(max-width:420px){.word span{width:38px;height:48px;font-size:26px}.kb button{min-width:34px;height:42px;font-size:18px;padding:0 6px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"كيف ألعب لعبة المشنقة؟","acceptedAnswer":{"@type":"Answer","text":"اضغط على الحروف لتخمين الكلمة المخفية. إذا كان الحرف موجوداً يظهر في مكانه، وإذا لم يكن موجوداً تفقد قلباً من قلوبك الستة. اكشف كل الحروف قبل أن تنتهي القلوب لتفوز."}},{"@type":"Question","name":"هل يمكنني استخدام لوحة المفاتيح؟","acceptedAnswer":{"@type":"Answer","text":"نعم، على الكمبيوتر اكتب الحروف العربية مباشرة بلوحة المفاتيح، وعلى الجوال اضغط على الحروف الظاهرة على الشاشة."}},{"@type":"Question","name":"ما فئات الكلمات؟","acceptedAnswer":{"@type":"Answer","text":"حيوانات، فواكه وخضار، دول وعواصم، وأشياء من حياتنا اليومية، ويظهر لك اسم الفئة كتلميح قبل أن تبدأ."}},{"@type":"Question","name":"ماذا يفعل زر التلميح؟","acceptedAnswer":{"@type":"Answer","text":"يكشف لك حرفاً واحداً من الكلمة مقابل قلب واحد، ولا يعمل إذا بقي لك قلب واحد فقط."}}]}
+</script>
+<script src="assets/i18n.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap mast">
+    <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
+    <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
+    <span class="grow"></span>
+    <button type="button" class="langbtn" id="langBtn" data-noi18n aria-label="Switch to English" lang="en">EN</button>
+  </div>
+</header>
+
+<main class="gamewrap">
+  <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب كلمات ← لعبة المشنقة</div>
+  <div class="gtitle"><h1>لعبة المشنقة (تخمين الكلمة) 🔤</h1><p>خمّن حروف الكلمة المخفية قبل أن تنتهي قلوبك الستة — حيوانات وفواكه ودول وأشياء</p></div>
+
+  <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
+
+  <div class="hud">
+    <div class="score"><div class="l">انتصارات</div><div class="v" id="wins">0</div></div>
+    <div class="score"><div class="l">سلسلة</div><div class="v" id="streak">0</div></div>
+  </div>
+  <div class="top3"><span class="cat" id="cat">—</span></div>
+  <div class="face" id="face">😀</div>
+  <div class="hearts" id="hearts"></div>
+  <div class="word" id="word"></div>
+  <p class="status" id="status" aria-live="polite"></p>
+  <div class="kb" id="kb"></div>
+  <div class="acts"><button class="btn ghost" id="hintBtn">💡 تلميح (−1 قلب)</button><button class="btn" id="newBtn">كلمة جديدة</button></div>
+  <p class="hint">اضغط على الحروف أو اكتبها بلوحة المفاتيح العربية</p>
+
+<a class="raqam-banner" href="https://raqam.ai/?utm_source=ma7zooz&amp;utm_medium=banner&amp;utm_campaign=games" target="_blank" rel="noopener"><span class="rb-mark">رقم</span><span class="rb-txt"><b>رقم · raqam.ai</b><small>أخبار الذكاء الاصطناعي والاقتصاد والتقنية وأدوات مالية بالعربية</small></span><span class="rb-go">زوروا الموقع ←</span></a>
+<section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة المشنقة</h2>
+  <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">لعبة المشنقة (تخمين الكلمة) من أشهر ألعاب الكلمات: تظهر لك خانات فارغة بعدد حروف كلمة مخفية من فئة معروفة، وتختار الحروف واحداً تلو الآخر. الحرف الصحيح يظهر في مكانه، والخطأ يُنقص قلباً من قلوبك الستة. اكشف الكلمة كاملة قبل أن تنتهي القلوب. في نسختنا لا توجد رسوم مزعجة: قلوب ووجه يتغيّر مع كل خطأ، وزر تلميح يكشف لك حرفاً مقابل قلب واحد. تعمل أونلاين مجاناً وبلا تحميل على الجوال والكمبيوتر.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/word" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كلمة اليوم</a> · <a href="/g-daily-code" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لغز الأرقام</a> · <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/sudoku" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سودوكو</a> · <a href="/tictactoe" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">إكس أو</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
+  </div>
+</section>
+<section class="gfaq" style="max-width:760px;margin:22px auto 0;padding:0 4px">
+  <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">أسئلة شائعة عن المشنقة</h2>
+  <details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">كيف ألعب لعبة المشنقة؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">اضغط على الحروف لتخمين الكلمة المخفية. إذا كان الحرف موجوداً يظهر في مكانه، وإذا لم يكن موجوداً تفقد قلباً من قلوبك الستة. اكشف كل الحروف قبل أن تنتهي القلوب لتفوز.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">هل يمكنني استخدام لوحة المفاتيح؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">نعم، على الكمبيوتر اكتب الحروف العربية مباشرة بلوحة المفاتيح، وعلى الجوال اضغط على الحروف الظاهرة على الشاشة.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">ما فئات الكلمات؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">حيوانات، فواكه وخضار، دول وعواصم، وأشياء من حياتنا اليومية، ويظهر لك اسم الفئة كتلميح قبل أن تبدأ.</p></details><details style="background:rgba(255,255,255,.04);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;margin:0 0 8px"><summary style="cursor:pointer;color:#fff;font-weight:700;font-size:15px"><h3 style="display:inline;font-size:15px;margin:0">ماذا يفعل زر التلميح؟</h3></summary><p style="color:var(--muted);line-height:1.9;margin:8px 0 0">يكشف لك حرفاً واحداً من الكلمة مقابل قلب واحد، ولا يعمل إذا بقي لك قلب واحد فقط.</p></details>
+</section>
+</main>
+
+<footer class="foot"><div class="fine">© <span id="yr"></span> محظوظ (ma7zooz.com)</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  "use strict";
+  var DATA={"حيوانات": ["قطة", "حصان", "زرافة", "غزال", "ذئب", "فيل", "نمر", "دجاجة", "سلحفاة", "عصفور", "ثعلب", "جمل", "دلفين", "تمساح", "فراشة", "خروف", "بطريق", "حمامة", "أسد", "أرنب"], "فواكه وخضار": ["تفاح", "موز", "برتقال", "عنب", "فراولة", "بطيخ", "رمان", "مشمش", "خوخ", "جزر", "بصل", "خيار", "بطاطس", "باذنجان", "ليمون", "أناناس", "تين", "زيتون", "كوسا", "سبانخ"], "دول وعواصم": ["الأردن", "مصر", "السعودية", "فلسطين", "لبنان", "تونس", "المغرب", "الجزائر", "عمان", "الكويت", "قطر", "البحرين", "اليمن", "سوريا", "العراق", "ليبيا", "السودان", "تركيا", "اليابان"], "أشياء": ["كتاب", "مفتاح", "ساعة", "كرسي", "هاتف", "مظلة", "قلم", "سيارة", "طائرة", "مدرسة", "شباك", "سرير", "مروحة", "ثلاجة", "حقيبة", "نظارة", "مكنسة", "وسادة", "تلفاز", "مسطرة"]};
+  var LETTERS='ابتثجحخدذرزسشصضطظعغفقكلمنهويةء'.replace('ء','').split('');
+  var MAXL=6, FACES=['😀','🙂','😐','😕','😟','😨','😵'];
+  var KW='ma7zooz_hangman_wins', KS='ma7zooz_hangman_streak';
+  var wins=0, streak=0; try{ wins=parseInt(localStorage.getItem(KW)||'0',10)||0; streak=parseInt(localStorage.getItem(KS)||'0',10)||0; }catch(e){}
+  var cats=Object.keys(DATA), word, cat, used, lives, over, lastWord='';
+  var elW=document.getElementById('word'), elK=document.getElementById('kb'), elH=document.getElementById('hearts'), elF=document.getElementById('face'), elS=document.getElementById('status'), elC=document.getElementById('cat'), elWins=document.getElementById('wins'), elStr=document.getElementById('streak');
+  function norm(c){ return ('أإآٱ'.indexOf(c)>-1)?'ا':(c==='ى'?'ي':(c==='ؤ'?'و':(c==='ئ'?'ي':c))); }
+  function stats(){ elWins.textContent=wins; elStr.textContent=streak; try{ localStorage.setItem(KW,wins); localStorage.setItem(KS,streak); }catch(e){} }
+  function pick(){
+    var w, c, n=0;
+    do{ c=cats[Math.floor(Math.random()*cats.length)]; var list=DATA[c]; w=list[Math.floor(Math.random()*list.length)]; n++; }while(w===lastWord&&n<20);
+    lastWord=w; cat=c; word=w;
+  }
+  function build(){
+    elK.innerHTML='';
+    LETTERS.forEach(function(L){ var b=document.createElement('button'); b.textContent=L; b.dataset.l=L; b.addEventListener('click',function(){ guess(L); }); elK.appendChild(b); });
+  }
+  function render(){
+    elW.innerHTML='';
+    var chars=word.split('');
+    chars.forEach(function(ch){
+      var s=document.createElement('span'), n=norm(ch);
+      if(used.indexOf(n)>-1||over){ s.textContent=ch; if(used.indexOf(n)>-1) s.className='on'; else s.className='miss'; }
+      else s.textContent='';
+      elW.appendChild(s);
+    });
+    elH.textContent=new Array(lives+1).join('❤️')+new Array(MAXL-lives+1).join('🖤');
+    elF.textContent=FACES[MAXL-lives];
+    Array.prototype.forEach.call(elK.children,function(b){
+      var n=norm(b.dataset.l), u=used.indexOf(n)>-1;
+      b.disabled=u||over; b.className=u?(word.split('').some(function(ch){return norm(ch)===n;})?'ok':'no'):'';
+    });
+  }
+  function won(){ return word.split('').every(function(ch){ return used.indexOf(norm(ch))>-1; }); }
+  function finish(win){
+    over=true;
+    if(win){ wins++; streak++; elS.textContent='🎉 أحسنت! الكلمة: '+word; }
+    else { streak=0; elS.textContent='💔 انتهت القلوب — الكلمة كانت: '+word; }
+    stats(); render();
+  }
+  function guess(L){
+    if(over) return;
+    var n=norm(L); if(used.indexOf(n)>-1) return;
+    used.push(n);
+    var hit=word.split('').some(function(ch){ return norm(ch)===n; });
+    if(!hit){ lives--; elS.textContent='حرف خاطئ'; } else elS.textContent='';
+    render();
+    if(won()) finish(true); else if(lives<=0) finish(false);
+  }
+  function hint(){
+    if(over||lives<=1) { if(!over) elS.textContent='لا يمكن استخدام التلميح — بقي لك قلب واحد'; return; }
+    var left=word.split('').filter(function(ch){ return used.indexOf(norm(ch))<0; });
+    if(!left.length) return;
+    var L=left[Math.floor(Math.random()*left.length)]; used.push(norm(L)); lives--; elS.textContent='💡 تلميح: ظهر حرف «'+L+'»';
+    render(); if(won()) finish(true);
+  }
+  function start(){ pick(); used=[]; lives=MAXL; over=false; elC.textContent=cat; elS.textContent=''; render(); }
+  document.getElementById('newBtn').addEventListener('click',function(){ if(!over&&used.length&&lives>0) { streak=0; stats(); } start(); });
+  document.getElementById('hintBtn').addEventListener('click',hint);
+  document.addEventListener('keydown',function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey) return;
+    var k=e.key; if(k&&k.length===1&&LETTERS.indexOf(norm(k))>-1){ guess(norm(k)); }
+  });
+  build(); stats(); start();
+  window.__hang={word:function(){return word;},guess:guess,state:function(){return {lives:lives,over:over,used:used};}};
+})();
+</script>
+</body>
+</html>

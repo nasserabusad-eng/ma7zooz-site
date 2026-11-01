@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-en-title="Minesweeper — Play Free Online | Ma7zooz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("ma7zooz_lang")==="en"){var d=document.documentElement;d.lang="en";d.dir="ltr"}}catch(e){}</script>
 <title>كانسة الألغام أونلاين | لعبة الألغام الكلاسيكية مجاناً | Minesweeper | محظوظ</title>
 <meta name="description" content="العب كانسة الألغام أونلاين مجاناً بالعربية — نفس لعبة الألغام الكلاسيكية في ويندوز. شرح طريقة اللعب، الأعلام والأرقام، على الجوال والكمبيوتر بدون تحميل. Play Minesweeper online free — the classic mines logic game for mobile and desktop.">
 <meta name="keywords" content="كانسة الالغام, كانسة الالغام اونلاين, كانسة الالغام لعبة, كانسة الالغام شرح, كانسة الالغام ويندوز, minesweeper, لعبة الالغام, العاب ذكاء, minesweeper online, play minesweeper free, minesweeper game, mines logic game">
@@ -44,6 +45,7 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "كيف تُلعب كانسة الألغام؟", "acceptedAnswer": {"@type": "Answer", "text": "اكشف الخانات واحدة تلو الأخرى. كل رقم يظهر يخبرك بعدد الألغام في الخانات الثماني المحيطة به. استخدم هذه الأرقام لتستنتج مكان الألغام وتجنّبها، واكشف كل الخانات الآمنة لتفوز."}}, {"@type": "Question", "name": "كيف أضع علماً على اللغم؟", "acceptedAnswer": {"@type": "Answer", "text": "على الكمبيوتر انقر بالزر الأيمن على الخانة، وعلى الجوال فعّل زر العلم ثم المس الخانة."}}, {"@type": "Question", "name": "هل هي نفس كانسة الألغام في ويندوز؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، نفس القواعد الكلاسيكية التي عرفتها في ويندوز، لكنها تعمل أونلاين في المتصفح وعلى الجوال أيضاً بلا تحميل."}}]}
 </script>
+<script src="assets/i18n.js" defer></script>
 </head>
 <body>
 
@@ -52,12 +54,13 @@
     <a href="/" class="brand"><span class="mk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13.5" r="1"/></svg></span><span class="word">محظوظ</span></a>
     <nav class="nav"><a href="/">الرئيسية</a><a href="/word">كلمة اليوم</a><a href="/game2048">2048</a></nav>
     <span class="grow"></span>
+    <button type="button" class="langbtn" id="langBtn" data-noi18n aria-label="Switch to English" lang="en">EN</button>
   </div>
 </header>
 
 <main class="gamewrap">
   <div class="crumbs"><a href="/">الرئيسية</a> ← ألعاب ذكاء ← كانسة الألغام</div>
-  <div class="gtitle"><h1>كانسة الألغام 💣 <span class="en-h" lang="en" dir="ltr">Minesweeper</span></h1><p>اكشف كل الخلايا الآمنة وتجنّب الألغام — ضع علماً على ما تظنّه لغماً</p><p class="en-sub" lang="en" dir="ltr">Reveal every safe square and flag the mines</p></div>
+  <div class="gtitle"><h1>كانسة الألغام 💣</h1><p>اكشف كل الخلايا الآمنة وتجنّب الألغام — ضع علماً على ما تظنّه لغماً</p></div>
 
   <div class="ad ad-lead"><span class="lbl">مساحة إعلانية</span></div>
 
@@ -71,10 +74,10 @@
   <div class="mboard" id="mboard"></div>
   <p class="hint">اضغط لكشف الخلية · فعّل «وضع علم» ثم اضغط لوضع علم (على الكمبيوتر: زر الفأرة الأيمن)</p>
 
+<a class="raqam-banner" href="https://raqam.ai/?utm_source=ma7zooz&amp;utm_medium=banner&amp;utm_campaign=games" target="_blank" rel="noopener"><span class="rb-mark">رقم</span><span class="rb-txt"><b>رقم · raqam.ai</b><small>أخبار الذكاء الاصطناعي والاقتصاد والتقنية وأدوات مالية بالعربية</small></span><span class="rb-go">زوروا الموقع ←</span></a>
 <section class="gtext" style="max-width:760px;margin:28px auto 0;padding:0 4px">
   <h2 style="font-family:'Baloo Bhaijaan 2',Tajawal,sans-serif;color:#fff;font-size:20px;margin:0 0 10px">عن لعبة كانسة الألغام</h2>
   <p style="color:var(--muted);line-height:1.9;margin:0 0 14px">كانسة الألغام لعبة منطق كلاسيكية: اكشف الخلايا الآمنة مستعيناً بالأرقام التي تدلّ على عدد الألغام المجاورة، وضع علماً على ما تظنّه لغماً. تُلعب باللمس مع زر لوضع الأعلام على الجوال وبالفأرة على الكمبيوتر. مجانية وبلا تحميل.</p>
-  <p lang="en" dir="ltr" style="color:var(--muted);line-height:1.8;margin:0 0 14px;text-align:left">Minesweeper is the classic logic game: reveal every safe square without hitting a mine, using the numbers as clues and flags to mark suspected mines. Tap on mobile (with a flag mode) or click and right-click on desktop. Free in your browser, no download.</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
     <span style="color:var(--dim);font-weight:700;font-size:14px">العب أيضاً:</span> <a href="/sudoku" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">سودوكو</a> · <a href="/word" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كلمة اليوم</a> · <a href="/snake" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">الأفعى</a> · <a href="/game2048" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">2048</a> · <a href="/memory" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">لعبة الذاكرة</a> · <a href="/tictactoe" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">إكس أو</a> · <a href="/molesmash" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">اضرب الخلد</a> · <a href="/" style="color:var(--y);font-weight:700;font-size:14px;text-decoration:none">كل الألعاب</a>
   </div>
